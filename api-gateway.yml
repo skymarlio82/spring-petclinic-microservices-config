@@ -6,23 +6,21 @@ zuul:
     visits-service: /visit/**
     customers-service: /customer/**
     api-gateway: /gateway/**
-
 server:
   port: 8080
   compression:
     enabled: true
     mime-types: application/json,text/css,application/javascript
     min-response-size: 2048
-
-# Internationalization
-spring.messages.basename: messages/messages
-
----
 spring:
-  profiles: docker
+  # Internationalization
+  messages:
+    basename: messages/messages
   zipkin:
-    baseUrl: http://tracing-server:9411
+    baseUrl: http://localhost:9411
 eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://discovery-server:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
