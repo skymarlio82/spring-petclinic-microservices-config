@@ -1,15 +1,18 @@
+server:
+  port: 8083
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 vets:
   cache:
     ttl: 60
     heap-size: 100
-spring:
-  zipkin:
-    baseUrl: http://localhost:9411
-server:
-  port: 8083
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${server.port}
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
