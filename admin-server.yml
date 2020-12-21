@@ -7,6 +7,7 @@ spring:
       password: "password"
   mail:
     host: smtp.163.com
+    port: 587
     username: 15618056515@163.com
     password: JWJIFQRNIWJLWUBI
   boot.admin.notify.mail.to: 15618056515@163.com
