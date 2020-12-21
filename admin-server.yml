@@ -6,21 +6,10 @@ spring:
       name: "admin"
       password: "password"
   mail:
-    default-encoding: UTF-8
-    host: smtp.office365.com
-    port: 587
-    username: S116433@ap.merckgroup.com
-    password: q@d4MwCZnu
-    from: bioinfo@merckgroup.com
-    properties:
-      mail:
-        smtp:
-          auth: true
-          timeout: 25000
-          starttls:
-            enable: true
-            #required: true
-  boot.admin.notify.mail.to: jitao.liu@external.merckgroup.com
+    host: smtp.163.com
+    username: 15618056515@163.com
+    password: JWJIFQRNIWJLWUBI
+  boot.admin.notify.mail.to: 15618056515@163.com
 eureka:
   instance:
     instance-id: ${spring.application.name}:${server.port}
