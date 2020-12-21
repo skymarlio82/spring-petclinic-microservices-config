@@ -35,6 +35,8 @@ management:
   security:
     enabled: false
   endpoint:
+    health:
+      show-details: ALWAYS
     metrics:
       enabled: true
     prometheus:
