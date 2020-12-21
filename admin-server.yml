@@ -7,10 +7,23 @@ spring:
       password: "password"
   mail:
     host: smtp.163.com
-    port: 587
+    #port: 587
     username: 15618056515@163.com
     password: JWJIFQRNIWJLWUBI
-  boot.admin.notify.mail.to: 15618056515@163.com
+    from: 15618056515@163.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  boot:
+   admin:
+    notify:
+      mail:
+        from: 15618056515@163.com
+        to: jitao.liu@aliyun.com
 eureka:
   instance:
     instance-id: ${spring.application.name}:${server.port}
