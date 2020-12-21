@@ -28,7 +28,7 @@ spring:
 # Logging
 logging:
   level:
-    org.springframework: INFO
+    org.springframework: DEBUG
 # JMX Metrics
 management:
   # Spring Boot 1.5 makes actuator secured by default
