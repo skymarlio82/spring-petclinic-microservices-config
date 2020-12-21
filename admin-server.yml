@@ -19,11 +19,13 @@ spring:
             enable: true
             required: true
   boot:
-   admin:
-    notify:
-      mail:
-        from: 15618056515@163.com
-        to: jitao.liu@aliyun.com
+    admin:
+      notify:
+        mail:
+          from: 15618056515@163.com
+          to: jitao.liu@aliyun.com
+    routes:
+      endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
 eureka:
   instance:
     instance-id: ${spring.application.name}:${server.port}
