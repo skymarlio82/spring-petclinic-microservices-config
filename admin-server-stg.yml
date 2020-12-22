@@ -1,0 +1,38 @@
+server:
+  port: 9090
+spring:
+  security:
+    user:
+      name: "admin"
+      password: "password"
+  mail:
+    host: smtp.163.com
+    #port: 587
+    username: 15618056515@163.com
+    password: JWJIFQRNIWJLWUBI
+    from: 15618056515@163.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  boot:
+   admin:
+    notify:
+      mail:
+        from: 15618056515@163.com
+        to: jitao.liu@aliyun.com
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
